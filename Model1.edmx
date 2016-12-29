@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OLOModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="OLOModelStoreContainer" />
+        <Function Name="GrabaBillingWS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDOLOPV" Type="varchar" Mode="In" />
+          <Parameter Name="IDOLOUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="FechaVenta" Type="datetime" Mode="In" />
+          <Parameter Name="IDCliente" Type="int" Mode="In" />
+          <Parameter Name="IDTipoDocumento" Type="int" Mode="In" />
+          <Parameter Name="NumDocumentoCliente" Type="varchar" Mode="In" />
+          <Parameter Name="NombreCliente" Type="varchar" Mode="In" />
+          <Parameter Name="FNacCliente" Type="date" Mode="In" />
+          <Parameter Name="IDGeneroCliente" Type="int" Mode="In" />
+          <Parameter Name="OcupacionCliente" Type="varchar" Mode="In" />
+          <Parameter Name="NacionalidadCliente" Type="varchar" Mode="In" />
+          <Parameter Name="DireccionCliente" Type="varchar" Mode="In" />
+          <Parameter Name="IDProvincia" Type="int" Mode="In" />
+          <Parameter Name="ProvinciaCliente" Type="varchar" Mode="In" />
+          <Parameter Name="IDDistritoCliente" Type="int" Mode="In" />
+          <Parameter Name="DistritoCliente" Type="varchar" Mode="In" />
+          <Parameter Name="TelefonoCliente" Type="varchar" Mode="In" />
+          <Parameter Name="Celular1Cliente" Type="varchar" Mode="In" />
+          <Parameter Name="Celular2Cliente" Type="varchar" Mode="In" />
+          <Parameter Name="eMailCliente" Type="varchar" Mode="In" />
+          <Parameter Name="DesTipoDispositivo" Type="varchar" Mode="In" />
+          <Parameter Name="MAC" Type="varchar" Mode="In" />
+          <Parameter Name="IDPlan" Type="int" Mode="In" />
+          <Parameter Name="DesPlan" Type="varchar" Mode="In" />
+          <Parameter Name="IDTipoVenta" Type="int" Mode="In" />
+          <Parameter Name="Importe" Type="money" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OLOModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OLOEntities" p1:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GrabaBillingWS">
+            <Parameter Name="IDOLOPV" Mode="In" Type="String" />
+            <Parameter Name="IDOLOUsuario" Mode="In" Type="String" />
+            <Parameter Name="FechaVenta" Mode="In" Type="DateTime" />
+            <Parameter Name="IDCliente" Mode="In" Type="Int32" />
+            <Parameter Name="IDTipoDocumento" Mode="In" Type="Int32" />
+            <Parameter Name="NumDocumentoCliente" Mode="In" Type="String" />
+            <Parameter Name="NombreCliente" Mode="In" Type="String" />
+            <Parameter Name="FNacCliente" Mode="In" Type="DateTime" />
+            <Parameter Name="IDGeneroCliente" Mode="In" Type="Int32" />
+            <Parameter Name="OcupacionCliente" Mode="In" Type="String" />
+            <Parameter Name="NacionalidadCliente" Mode="In" Type="String" />
+            <Parameter Name="DireccionCliente" Mode="In" Type="String" />
+            <Parameter Name="IDProvincia" Mode="In" Type="Int32" />
+            <Parameter Name="ProvinciaCliente" Mode="In" Type="String" />
+            <Parameter Name="IDDistritoCliente" Mode="In" Type="Int32" />
+            <Parameter Name="DistritoCliente" Mode="In" Type="String" />
+            <Parameter Name="TelefonoCliente" Mode="In" Type="String" />
+            <Parameter Name="Celular1Cliente" Mode="In" Type="String" />
+            <Parameter Name="Celular2Cliente" Mode="In" Type="String" />
+            <Parameter Name="eMailCliente" Mode="In" Type="String" />
+            <Parameter Name="DesTipoDispositivo" Mode="In" Type="String" />
+            <Parameter Name="MAC" Mode="In" Type="String" />
+            <Parameter Name="IDPlan" Mode="In" Type="Int32" />
+            <Parameter Name="DesPlan" Mode="In" Type="String" />
+            <Parameter Name="IDTipoVenta" Mode="In" Type="Int32" />
+            <Parameter Name="Importe" Mode="In" Type="Decimal" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OLOModelStoreContainer" CdmEntityContainer="OLOEntities" >
+          <FunctionImportMapping FunctionImportName="GrabaBillingWS" FunctionName="OLOModel.Store.GrabaBillingWS" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
